@@ -44,6 +44,10 @@ public class CollegueController {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ce pseudo est déjà utilisé");
 		}
 		else {
+			//verification imgUrl pour mettre image par défault
+			if(collegue.getImgUrl().equals("")) {
+				collegue.setImgUrl("https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg");
+			}
 			collegueRepo.save(collegue);
 		}
 		

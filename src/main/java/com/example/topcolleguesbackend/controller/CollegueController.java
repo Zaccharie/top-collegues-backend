@@ -33,6 +33,11 @@ public class CollegueController {
 
 	}
 	
+	@RequestMapping(method = RequestMethod.GET, value="detail/{pseudo}")
+	public Collegue findCollegue(@PathVariable String pseudo) {
+		return collegueRepo.findByNom(pseudo);
+	}
+	
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<?> saveCollegue(@RequestBody Collegue collegue) {
 		
@@ -46,7 +51,7 @@ public class CollegueController {
 		else {
 			//verification imgUrl pour mettre image par défault
 			if(collegue.getImgUrl().equals("")) {
-				collegue.setImgUrl("https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg");
+				collegue.setImgUrl("assets/namelessG.jpg");
 			}
 			collegueRepo.save(collegue);
 		}

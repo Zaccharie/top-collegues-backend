@@ -20,11 +20,11 @@ public class StartUpAppListener {
 		// à un moment où le contexte Spring est complètement créé
 
 		//generer jeu de données avec departements et collaborateurs
-		Collegue c1 = new Collegue("Zaccharie","https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg", 10);
-		Collegue c2 = new Collegue("Jordan","https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg", 0);
-		Collegue c3 = new Collegue("Rossi","https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg", 0);
-		Collegue c4 = new Collegue("Richard","https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg", 0);
-		Collegue c5 = new Collegue("Francois","https://mbevivino.files.wordpress.com/2011/08/silhouette_i-m-congnito.jpg", 0);
+		Collegue c1 = new Collegue("Zaccharie","assets/namelessG.jpg", 10);
+		Collegue c2 = new Collegue("Jordan","assets/namelessG.jpg", 0);
+		Collegue c3 = new Collegue("Rossi","assets/namelessG.jpg", 0);
+		Collegue c4 = new Collegue("Richard","assets/namelessG.jpg", 0);
+		Collegue c5 = new Collegue("Francois","assets/namelessG.jpg", 0);
 		
 		collegueRepo.save(c1);
 		collegueRepo.save(c2);

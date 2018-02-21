@@ -5,7 +5,9 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
+import com.example.topcolleguesbackend.entite.Avis;
 import com.example.topcolleguesbackend.entite.Collegue;
+import com.example.topcolleguesbackend.repository.AvisRepository;
 import com.example.topcolleguesbackend.repository.CollegueRepository;
 
 @Component
@@ -13,6 +15,9 @@ public class StartUpAppListener {
 	
 	@Autowired
 	private CollegueRepository collegueRepo;
+	
+	@Autowired
+	private AvisRepository avisRepo;	
 	
 	@EventListener(ContextRefreshedEvent.class)
 	public void contextRefreshedEvent() {
@@ -26,11 +31,15 @@ public class StartUpAppListener {
 		Collegue c4 = new Collegue("Richard","assets/namelessG.jpg", 0);
 		Collegue c5 = new Collegue("Francois","assets/namelessG.jpg", 0);
 		
+		Avis av1 = new Avis(c1, "test: Zac est trop cool");
+		
 		collegueRepo.save(c1);
 		collegueRepo.save(c2);
 		collegueRepo.save(c3);
 		collegueRepo.save(c4);
 		collegueRepo.save(c5);
+		
+		avisRepo.save(av1);
 	}
 
 }

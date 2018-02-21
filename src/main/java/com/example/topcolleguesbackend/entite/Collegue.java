@@ -1,10 +1,14 @@
 package com.example.topcolleguesbackend.entite;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,9 +28,12 @@ public class Collegue {
 	@Column(name="SCORE")
 	private Integer score;
 	
+	@OneToMany(mappedBy="collegue")
+	private Set<Avis> avis;
+	
 	//constructor
 	public Collegue(){
-		
+		avis = new HashSet<Avis>();
 	}
 	
 	public Collegue(String pseudo, String imageUrl, Integer score) {
@@ -67,6 +74,14 @@ public class Collegue {
 
 	public void setScore(Integer score) {
 		this.score = score;
+	}
+
+	public Set<Avis> getAvis() {
+		return avis;
+	}
+
+	public void setAvis(Set<Avis> avis) {
+		this.avis = avis;
 	}
 	
 }
